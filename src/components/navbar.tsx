@@ -3,18 +3,17 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { BsBuildings } from "react-icons/bs";
-import { FaInstagram, FaLinkedin, FaRegUser, FaSearch } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
 import { GrDocumentText } from "react-icons/gr";
 import { MdOutlineExplore, MdOutlineKeyboardArrowLeft } from "react-icons/md";
-import { RiHome9Fill } from "react-icons/ri";
-import { TbCalendarPlus } from "react-icons/tb";
 import AuthButton from "./authButton";
-import { Button } from "./ui/button";
+import ButtomNav from "./buttomNav";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+
+  
 
   return (
     <header className="flex items-center sticky top-0 justify-between px-6 md:px-10 py-3 z-50 border-b border-gray-200 bg-white">
@@ -43,35 +42,7 @@ export default function Header() {
         </form>
       </nav>
 
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-md z-40">
-        <ul className="flex justify-around items-center py-3 text-[#172763] text-sm font-medium">
-          <li className="flex flex-col items-center">
-            <RiHome9Fill size={25} />
-            <a href="/" className="text-[12px]">
-              Beranda
-            </a>
-          </li>
-
-          <li className="flex flex-col items-center">
-            <MdOutlineExplore size={25} />{" "}
-            <a href="/event" className="text-[12px]">
-              Jelajahi Event
-            </a>
-          </li>
-
-          <li className="flex flex-col items-center">
-            <TbCalendarPlus size={25} />
-            <a href="/buat" className="text-[12px]">
-              Buat Event
-            </a>
-          </li>
-
-          <li className="flex flex-col items-center">
-            <FaRegUser size={25} />
-            <a href="/profil">Profil</a>
-          </li>
-        </ul>
-      </nav>
+      <ButtomNav />
 
       <div className="hidden md:block h-10 border-l border-gray-300 mr-5" />
 
@@ -107,12 +78,7 @@ export default function Header() {
             </p>
 
             <div className="flex gap-3">
-              <Button variant={"white"} size={"lg"} className="flex-1">
-                Daftar
-              </Button>
-              <Button variant={"blue"} size={"lg"} className="flex-1">
-                Masuk
-              </Button>
+              <AuthButton />
             </div>
           </div>
 
@@ -123,50 +89,21 @@ export default function Header() {
               </a>
               <ul className="space-y-4 mt-5 text-[15px] ">
                 <a href="/about-us">
-                  <li className="flex items-center gap-3 mb-3">
+                  <li className="flex items-center gap-3 mb-3 font-semibold hover:text-[#EF7722]">
                     <BsBuildings size={20} className="text-[#172763]" /> Tentang
                     Kami
                   </li>
                 </a>
                 <a href="/terms">
-                  <li className="flex items-center gap-3 mb-3">
+                  <li className="flex items-center gap-3 mb-3 font-semibold hover:text-[#EF7722]">
                     <GrDocumentText size={20} className="text-[#172763]" />
                     Syarat & Ketentuan
                   </li>
                 </a>
                 <a href="/event">
-                  <li className="flex items-center gap-3 mb-3">
+                  <li className="flex items-center gap-3 mb-3 font-semibold hover:text-[#EF7722]">
                     <MdOutlineExplore size={20} className="text-[#172763]" />
                     Jelajahi Event
-                  </li>
-                </a>
-              </ul>
-            </div>
-          </div>
-
-          <div className="px-6">
-            <div className="space-y-5 text-[#172763]">
-              <a href="/about-us">
-                <h3 className="font-bold text-lg ">Media Sosial</h3>
-              </a>
-              <ul className="space-y-4 mt-5 text-[15px] ">
-                <a href="https://www.instagram.com/alvindvvi" target="_blank">
-                  <li className="flex items-center gap-3 mb-3">
-                    <FaInstagram size={20} className="text-[#172763]" />{" "}
-                    Instagram
-                  </li>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/alfin-dwi-wadani/"
-                  target="_blank"
-                >
-                  <li className="flex items-center gap-3 mb-3">
-                    <FaLinkedin size={20} className="text-[#172763]" /> LinkedIn
-                  </li>
-                </a>
-                <a href="https://x.com/alvindvvi" target="_blank">
-                  <li className="flex items-center gap-3">
-                    <FaSquareXTwitter size={20} className="text-[#172763]" /> X
                   </li>
                 </a>
               </ul>

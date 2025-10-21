@@ -21,7 +21,7 @@ const ImageList = [
     alt: "Image 2",
   },
   {
-    banner: "https://assets.loket.com/images/ss/1756708455_R89KFf.jpg",
+    banner: "https://assets.loket.com/images/ss/1760528602_2lmPdU.png",
     bannerMobile: "https://assets.loket.com/images/ss/1756708456_9iDW65.jpg",
     alt: "Image 3",
   },
@@ -42,7 +42,7 @@ const ImageList = [
   },
 ];
 
-export default function ImageCarousel() {
+export default function BannerCarousel() {
   const [api, setApi] = useState<any>(null);
 
   useEffect(() => {

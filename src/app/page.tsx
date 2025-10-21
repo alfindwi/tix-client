@@ -1,16 +1,12 @@
-import ImageCarousel from "@/components/imageCarousel";
+import BannerCarousel from "@/components/bannerCarousel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent } from "@/components/ui/card";
-import { CalendarDays } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { IoMusicalNotesOutline } from "react-icons/io5";
 
 export default function Home() {
   return (
     <div className="w-full py-4">
       <div className="max-w-7xl mx-auto px-4">
-        <ImageCarousel />
+        <BannerCarousel />
 
         <div className="mt-6 mb-4">
           <p className="font-bold text-2xl text-[#162562]">Events</p>
@@ -19,7 +15,7 @@ export default function Home() {
             <Link href="/event">
               <div className="w-[300px] mt-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md overflow-hidden transition-shadow duration-300 cursor-pointer">
                 <img
-                  src="https://ypassets.yesplis.com/250922/assets/34b410ad-8e0d-44ee-86a1-e8ac1f64663a.jpeg"
+                  src="https://assets.loket.com/neo/production/images/banner/20250815211622_689f4136370d7.jpeg"
                   alt="ARUNIKA FUN RUN"
                   className="w-full h-44 object-cover"
                 />

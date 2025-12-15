@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 
 const ImageList = [
   {
-    banner: "https://assets.loket.com/images/ss/1758514033_mw4vOV.jpg",
+    banner: "https://assets.loket.com/images/ss/1762749363_Y6z55g.jpg",
     bannerMobile: "https://assets.loket.com/images/ss/1758514034_zXsMIl.jpg",
     alt: "Image 1",
   },

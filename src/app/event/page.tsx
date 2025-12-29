@@ -2,7 +2,9 @@ import { Button } from "@/components/ui/button";
 import { CopyButton } from "@/components/ui/copy-button";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiCalendar } from "react-icons/fi";
+import { IoLogoWhatsapp } from "react-icons/io5";
 import { MdOutlineCategory } from "react-icons/md";
+import { AiOutlineFacebook } from "react-icons/ai";
 import { SlLocationPin } from "react-icons/sl";
 
 export default function Event() {
@@ -13,6 +15,14 @@ export default function Event() {
   const twitterShareUrl = `https://x.com/intent/post?url=${encodeURIComponent(
     eventUrl
   )}&text=${encodeURIComponent(eventTitle)}`;
+
+  const waShareUrl = `https://wa.me/?text=${encodeURIComponent(
+    `${eventTitle} ${eventUrl}`
+  )}`;
+
+  const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+    eventUrl
+  )}`;
 
   return (
     <div className="w-full max-w-8xl mx-auto">
@@ -49,9 +59,9 @@ export default function Event() {
           />
         </div>
       </div>
-      <div className="flex justify-between items-start  ">
+      <div className="flex justify-between items-start ">
         <div className="w-full">
-          <div className="px-10 flex items-center justify-between border-b top-15">
+          <div className="px-10 flex items-center justify-between border-b sticky top-16 bg-white">
             <div className="px-10 py-2 flex space-x-6">
               <button className="pb-3 border-b-2 border-blue-600 text-blue-600 font-semibold">
                 Deskripsi
@@ -64,8 +74,8 @@ export default function Event() {
               </button>
             </div>
           </div>
-
-          <div className="w-[400px] bg-white border border-gray-200 cursor-pointer flex items-center justify-between px-4 py-3 absolute right-15 top-91 transform -translate-y-1/2">
+          
+          <div className="w-[400px] bg-white border border-gray-200 cursor-pointer flex items-center justify-between px-4 py-3 absolute right-15 top-82">
             <div className="flex flex-col">
               <p className="text-[13px] text-[#b5a6a5] font-semibold">
                 Harga mulai dari
@@ -77,22 +87,21 @@ export default function Event() {
               Beli Tiket
             </Button>
           </div>
+
           <div className=" flex flex-col w-[400px] absolute right-15 top-120 transform -translate-y-1/2">
             <div className="flex items-center gap-3 w-full h-20 p-4 bg-white border-b border-r border-l border-gray-200">
               <img
-                src="https://assets.loket.com/neo/production/images/organization/20251016112922_68f074a214751.png"
+                src="https://assets.loket.com/neo/production/images/organization/20220304170257_6221e3d1169c9.png"
                 alt="nbj logo"
                 className="w-10 h-10 rounded-full"
               />
               <div>
                 <p className="text-sm text-gray-400">Diselenggarakan oleh</p>
-                <p className="font-semibold text-gray-800">
-                  Nyanyi Bareng Jakarta
-                </p>
+                <p className="font-semibold text-gray-800">COMIKA EVENT</p>
               </div>
             </div>
 
-            <div className="mt-3  ">
+            <div className="mt-3">
               <p className="text-gray-700 font-medium">Bagikan Event</p>
               <div className="flex flex-row mt-3 gap-2">
                 <CopyButton content={eventUrl} variant={"blue"} />
@@ -104,11 +113,27 @@ export default function Event() {
                 >
                   <FaXTwitter className="text-md text-white" />
                 </a>
+                <a
+                  href={waShareUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 flex items-center justify-center rounded-xl bg-green-500"
+                >
+                  <IoLogoWhatsapp className="text-md text-white" />
+                </a>
+                <a
+                  href={fbShareUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 flex items-center justify-center rounded-xl bg-blue-500"
+                >
+                  <AiOutlineFacebook className="text-md text-white" />
+                </a>
               </div>
             </div>
           </div>
 
-          <div className="px-20 flex justify-between w-full">
+          <div className="px-20 flex justify-between max-w-[850px]">
             <div className="py-3 space-y-4">
               <h2 className="text-xl font-semibold">
                 Untitled Humans Singin’ Club – Tangerang Selatan Edition

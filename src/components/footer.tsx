@@ -1,13 +1,14 @@
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FiLinkedin } from "react-icons/fi";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#fbfbfb] text-black py-12 px-6 sm:px-10 border-t border-[#d4d4d4]">
+    <footer className="bg-[#112041] text-white py-12 px-6 sm:px-10 border-t border-[#d4d4d4]">
       <div className="max-w-6xl mx-auto flex flex-col items-center justify-center">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-10 text-left md:text-left w-full">
           <div>
-            <h3 className="font-semibold mb-4 text-lg text-[#162562]">
+            <h3 className="font-bold mb-4 text-lg text-white">
               Tiktix
             </h3>
             <ul className="space-y-2 text-sm">
@@ -27,7 +28,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-lg text-[#162562]">
+            <h3 className="font-bold mb-4 text-lg text-white">
               Kontak
             </h3>
             <ul className="space-y-2 text-sm">
@@ -50,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4 text-lg text-[#162562]">
+            <h3 className="font-bold mb-4 text-lg text-white">
               Inspirasi Event
             </h3>
             <ul className="space-y-2 text-sm">
@@ -80,23 +81,23 @@ export default function Footer() {
           <h4 className="font-semibold mb-6">Ikuti Kami</h4>
           <div className="flex justify-center items-center gap-6 text-2xl">
             <a href="https://www.instagram.com/alvindvvi" target="_blank">
-              <FaInstagram className="text-[#162562] hover:scale-110 transition-transform" />
+              <FaInstagram className="text-white hover:scale-110 transition-transform" />
             </a>
             <a
               href="https://www.linkedin.com/in/alfin-dwi-wadani"
               target="_blank"
             >
-              <FaLinkedin className="text-[#162562] hover:scale-110 transition-transform" />
+              <FiLinkedin className="text-white hover:scale-110 transition-transform" />
             </a>
             <a href="https://x.com/alvindvvi" target="_blank">
-              <FaSquareXTwitter className="text-[#162562] hover:scale-110 transition-transform" />
+              <FaXTwitter className="text-white hover:scale-110 transition-transform" />
             </a>
           </div>
         </div>
 
         <div className="border-t border-[#d4d4d4] mt-10 w-full"></div>
 
-        <p className="text-center text-sm text-gray-600 mt-6">
+        <p className="text-center text-sm text-white-500 mt-6">
           Tiktix © {new Date().getFullYear()}. All rights reserved
         </p>
       </div>

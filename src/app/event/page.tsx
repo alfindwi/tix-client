@@ -5,7 +5,14 @@ import { FiCalendar } from "react-icons/fi";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { MdOutlineCategory } from "react-icons/md";
 import { AiOutlineFacebook } from "react-icons/ai";
+import { LuTicket } from "react-icons/lu";
 import { SlLocationPin } from "react-icons/sl";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Event() {
   const eventTitle = "RICH BRIAN - WHERE IS MY HEAD - ASIAN TOUR 2025";
@@ -62,7 +69,7 @@ export default function Event() {
       <div className="flex justify-between items-start ">
         <div className="w-full">
           <div className="px-10 flex items-center justify-between border-b sticky top-16 bg-white">
-            <div className="px-10 py-2 flex space-x-6">
+            <div className="py-2 flex space-x-6">
               <button className="pb-3 border-b-2 border-blue-600 text-blue-600 font-semibold">
                 Deskripsi
               </button>
@@ -74,7 +81,7 @@ export default function Event() {
               </button>
             </div>
           </div>
-          
+
           <div className="w-[400px] bg-white border border-gray-200 cursor-pointer flex items-center justify-between px-4 py-3 absolute right-15 top-82">
             <div className="flex flex-col">
               <p className="text-[13px] text-[#b5a6a5] font-semibold">
@@ -133,7 +140,7 @@ export default function Event() {
             </div>
           </div>
 
-          <div className="px-20 flex justify-between max-w-[850px]">
+          <div className="px-10 flex justify-between max-w-[850px]">
             <div className="py-3 space-y-4">
               <h2 className="text-xl font-semibold">
                 Untitled Humans Singin’ Club – Tangerang Selatan Edition
@@ -161,6 +168,23 @@ export default function Event() {
                 </p>
               </div>
             </div>
+          </div>
+
+          <div className="px-10 flex flex-col max-w-[850px]">
+            <p className="text-2xl text-[#152955] font-semibold flex items-center gap-2 mt-3">
+              <LuTicket className="text-3xl text-[#152955] " />
+              Tiket
+            </p>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>
+                  PUBLIC - WEEKDAY
+                </AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </div>

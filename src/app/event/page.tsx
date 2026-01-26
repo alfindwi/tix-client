@@ -1,18 +1,19 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { CopyButton } from "@/components/ui/copy-button";
-import { FaXTwitter } from "react-icons/fa6";
-import { FiCalendar } from "react-icons/fi";
-import { IoLogoWhatsapp } from "react-icons/io5";
-import { MdOutlineCategory } from "react-icons/md";
-import { AiOutlineFacebook } from "react-icons/ai";
-import { LuTicket } from "react-icons/lu";
-import { SlLocationPin } from "react-icons/sl";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { CopyButton } from "@/components/ui/copy-button";
+import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import { FiCalendar } from "react-icons/fi";
+import { IoDocumentTextOutline, IoLogoWhatsapp } from "react-icons/io5";
+import { MdOutlineCategory } from "react-icons/md";
+import { SlLocationPin } from "react-icons/sl";
+import { Ticket } from "./ticket";
 
 export default function Event() {
   const eventTitle = "RICH BRIAN - WHERE IS MY HEAD - ASIAN TOUR 2025";
@@ -20,15 +21,15 @@ export default function Event() {
     "https://www.loket.com/event/rich-brian-where-is-my-head-asian-tour_kTD4";
 
   const twitterShareUrl = `https://x.com/intent/post?url=${encodeURIComponent(
-    eventUrl
+    eventUrl,
   )}&text=${encodeURIComponent(eventTitle)}`;
 
   const waShareUrl = `https://wa.me/?text=${encodeURIComponent(
-    `${eventTitle} ${eventUrl}`
+    `${eventTitle} ${eventUrl}`,
   )}`;
 
   const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-    eventUrl
+    eventUrl,
   )}`;
 
   return (
@@ -134,7 +135,7 @@ export default function Event() {
                   rel="noopener noreferrer"
                   className="p-2 flex items-center justify-center rounded-xl bg-blue-500"
                 >
-                  <AiOutlineFacebook className="text-md text-white" />
+                  <FaFacebookF className="text-md text-white" />
                 </a>
               </div>
             </div>
@@ -170,21 +171,72 @@ export default function Event() {
             </div>
           </div>
 
-          <div className="px-10 flex flex-col max-w-[850px]">
+          <Ticket />
+          <div className="px-10 flex flex-col max-w-[850px] mb-5">
             <p className="text-2xl text-[#152955] font-semibold flex items-center gap-2 mt-3">
-              <LuTicket className="text-3xl text-[#152955] " />
-              Tiket
+              <IoDocumentTextOutline className="text-3xl text-[#152955] " />
+              Syarat dan Ketentuan
             </p>
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  PUBLIC - WEEKDAY
-                </AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+          </div>
+          <div className="px-10 flex flex-col">
+            <p className="text-2xl text-black font-semibold flex items-center gap-2 mt-3">
+              Event Untuk Kamu
+            </p>
+            <div className="w-full sm:max-w-xs md:max-w-full ">
+              <Carousel
+                opts={{
+                  align: "start",
+                }}
+              >
+                <CarouselContent className="">
+                  {Array.from({ length: 10 }).map((_, index) => (
+                    <CarouselItem
+                      key={index}
+                      className="basis-1/2 sm:basis-1/2 md:basis-1/4"
+                    >
+                      <div className="w-full sm:max-w-[150px] md:max-w-[280px] mt-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md overflow-hidden transition-shadow duration-300 cursor-pointer">
+                        <img
+                          src="https://assets.loket.com/neo/production/images/banner/20260116203736_696a3f2030a5c.jpg"
+                          alt="ARUNIKA FUN RUN"
+                          className="w-full h-35 object-cover"
+                        />
+
+                        <div className="p-4">
+                          <h3 className="font-bold text-[13px] mb-1 uppercase ">
+                            (10) years of Reality Club Live in Jakarta, Indonesia
+                          </h3>
+
+                          <p className="text-gray-500 text-sm mb-1">
+                            6 Jun 2026
+                          </p>
+
+                          <p className="font-semibold text-[15px] mb-2 mt-2">
+                            Rp. 449.000
+                          </p>
+
+                          <div className="flex items-center border-t pt-3">
+                            <Avatar>
+                              <AvatarImage
+                                src={
+                                  "http://assets.loket.com/neo/production/images/organization/20251006230159_68e3e7f76057e.png"
+                                }
+                              />
+                              <AvatarFallback>AR</AvatarFallback>
+                            </Avatar>
+
+                            <p className="text-md ml-3 text-[#606161]">
+                              Arunika
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
           </div>
         </div>
       </div>
